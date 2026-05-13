@@ -138,6 +138,12 @@
         opacity: 1;
         transform: translateY(0);
     }
+    video::-webkit-media-controls-start-playback-button {
+        display: none !important;
+    }
+    video::-webkit-media-controls {
+        display: none !important;
+    }
 </style>
 </head>
 <body class="font-body-md text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed overflow-hidden">
@@ -341,6 +347,10 @@
 
     if (introOverlay && introVideo) {
         let isLooping = true;
+
+        // iOS Hack: Jump the video forward a fraction of a second to trick iOS into skipping the native play button
+        introVideo.currentTime = 0.04;
+        introVideo.play().catch(e => console.log('Autoplay kickstart prevented:', e));
 
         // Micro-loop the first 0.4s of the video
         introVideo.addEventListener('timeupdate', () => {
