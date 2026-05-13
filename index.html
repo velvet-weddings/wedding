@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A &amp; S - The Eternal Union</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@100..900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-surface": "#c5a46d",
+                "on-secondary": "#432c03",
+                "outline": "#8f9284",
+                "secondary-fixed": "#ffddb0",
+                "on-tertiary-fixed-variant": "#3e4b25",
+                "inverse-on-surface": "#2f3130",
+                "secondary-fixed-dim": "#e7c08a",
+                "outline-variant": "#45483c",
+                "surface-container": "#1e2020",
+                "tertiary": "#bccd9a",
+                "surface": "#121413",
+                "primary-fixed": "#d4eca2",
+                "on-secondary-container": "#d4af7a",
+                "on-tertiary-fixed": "#131f01",
+                "on-primary-fixed-variant": "#3b4d14",
+                "on-secondary-fixed-variant": "#5c4217",
+                "background": "#121413",
+                "inverse-surface": "#c5a46d",
+                "error": "#ffb4ab",
+                "primary": "#c5a46d",
+                "on-background": "#c5a46d",
+                "on-surface-variant": "#c5a46d",
+                "surface-tint": "#c5a46d",
+                "surface-dim": "#121413",
+                "on-primary-fixed": "#141f00",
+                "inverse-primary": "#52652a",
+                "on-error": "#690005",
+                "primary-fixed-dim": "#c5a46d",
+                "surface-container-low": "#1a1c1c",
+                "tertiary-fixed": "#d8e9b5",
+                "surface-container-high": "#292a2a",
+                "tertiary-container": "#4e5c33",
+                "on-tertiary-container": "#c3d3a0",
+                "secondary-container": "#5c4217",
+                "on-secondary-fixed": "#281800",
+                "surface-variant": "#343535",
+                "primary-container": "#4a5d23",
+                "on-primary": "#253600",
+                "surface-container-lowest": "#0d0e0e",
+                "secondary": "#e7c08a",
+                "tertiary-fixed-dim": "#bccd9a",
+                "on-primary-container": "#bed58e",
+                "surface-container-highest": "#343535",
+                "on-tertiary": "#283510",
+                "error-container": "#93000a",
+                "on-error-container": "#ffdad6",
+                "surface-bright": "#383939",
+                "gold": "#c5a46d", /* Map primary to gold based on theme */
+                "olive": "#4a5d23"  /* Map primary-container to olive based on theme */
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "gutter": "32px",
+                "margin-mobile": "20px",
+                "section-padding": "128px",
+                "margin-desktop": "64px",
+                "container-max-width": "1200px",
+                "unit": "4px",
+                "element-gap": "24px",
+                "container-padding": "40px",
+                "section-margin": "80px",
+                "container-max": "1100px"
+        },
+        "fontFamily": {
+                "label-caps": ["EB Garamond"],
+                "accent-script": ["cursive"],
+                "headline-md": ["EB Garamond"],
+                "display-lg": ["EB Garamond"],
+                "headline-lg": ["EB Garamond"],
+                "headline-lg-mobile": ["EB Garamond"],
+                "body-lg": ["EB Garamond"],
+                "body-md": ["EB Garamond"],
+                "ui-button": ["Hanken Grotesk"],
+                "headline-sm": ["EB Garamond"],
+                "ui-label": ["Hanken Grotesk"]
+        },
+        "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                "accent-script": ["20px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "ui-button": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "600"}],
+                "ui-label": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+    body {
+        background-color: #E3D6B7;
+        scroll-behavior: smooth;
+        min-height: max(884px, 100dvh);
+    }
+    .foil-glow {
+        text-shadow: 0 0 10px rgba(197, 164, 109, 0.4);
+    }
+    .vignette {
+        background: radial-gradient(circle, transparent 40%, rgba(74, 93, 35, 0.4) 100%);
+    }
+    .divider-flourish::before, .divider-flourish::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, transparent, #c5a46d, transparent);
+    }
+    .timeline-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .timeline-item--visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed overflow-hidden">
+
+<div id="intro-overlay" class="fixed inset-0 z-[999] bg-[#1a1c18] flex flex-col items-center justify-center transition-opacity duration-1000 cursor-pointer">
+    <video id="intro-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted playsinline>
+        <source src="IMG_7040%20(1).MOV" type="video/mp4">
+    </video>
+</div>
+
+<main class="overflow-x-hidden w-full relative">
+<!-- Hero Section -->
+<section class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+<video autoplay loop muted playsinline class="w-full h-full object-cover">
+<source src="IMG_6959.MP4" type="video/mp4">
+</video>
+</section>
+<section class="py-12 bg-transparent">
+<div class="max-w-5xl mx-auto px-margin-mobile flex justify-center">
+<div class="relative w-full max-w-4xl flex justify-center items-center py-20 sm:py-24 md:py-32">
+<img src="wide_timer_frame.png" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] sm:w-[120%] md:w-[100%] max-w-none h-auto object-contain pointer-events-none mix-blend-multiply opacity-90" alt="Elegant Timer Frame">
+<div class="relative z-10 flex justify-center items-center gap-2 sm:gap-4 md:gap-12 w-full px-4 text-center">
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md md:text-display-lg text-olive">54</span>
+<span class="font-ui-label text-[10px] md:text-ui-label text-primary-fixed-dim uppercase tracking-[0.3em] mt-2">Days</span>
+</div>
+<div class="text-primary-fixed-dim/40 font-headline-sm text-headline-sm pb-6">:</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md md:text-display-lg text-olive">12</span>
+<span class="font-ui-label text-[10px] md:text-ui-label text-primary-fixed-dim uppercase tracking-[0.3em] mt-2">Hours</span>
+</div>
+<div class="text-primary-fixed-dim/40 font-headline-sm text-headline-sm pb-6">:</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md md:text-display-lg text-olive">08</span>
+<span class="font-ui-label text-[10px] md:text-ui-label text-primary-fixed-dim uppercase tracking-[0.3em] mt-2">Minutes</span>
+</div>
+<div class="text-primary-fixed-dim/40 font-headline-sm text-headline-sm pb-6">:</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md md:text-display-lg text-olive">45</span>
+<span class="font-ui-label text-[10px] md:text-ui-label text-primary-fixed-dim uppercase tracking-[0.3em] mt-2">Seconds</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Invitation Card -->
+<section class="w-full pt-32 md:pt-40 pb-12 flex justify-center px-8 md:px-margin-mobile">
+<img src="005c771b-9b1f-43ae-b625-48ea6d43b089_processed.png" class="w-full max-w-[450px] md:max-w-[600px] h-auto object-contain drop-shadow-2xl pointer-events-none" alt="Welcome to our wedding, Ahmad and Farah" />
+</section>
+
+<!-- Decorative Divider Sticker -->
+<div class="w-full flex justify-center py-8 bg-transparent">
+<img src="Untitled%20design.png" class="w-[280px] md:w-[350px] h-auto object-contain mix-blend-multiply opacity-90 pointer-events-none" alt="Decorative Olive Tree Divider" />
+</div>
+
+<!-- The Celebration Timeline -->
+<section class="py-section-padding px-margin-mobile relative" id="itinerary">
+<img src="WhatsApp%20Image%202026-05-13%20at%207.56.02%20PM.jpeg" class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none mix-blend-multiply z-0" alt="Timeline Background Frame" />
+<div class="max-w-[800px] mx-auto relative z-10 p-10 md:p-20 pb-32 md:pb-48">
+<div class="text-center mb-16 relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary-fixed-dim mb-4">The Celebration</h2>
+<div class="flex items-center justify-center gap-4 divider-flourish max-w-[300px] mx-auto">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="absolute left-1/2 -translate-x-1/2 h-full w-[1px] bg-primary-fixed-dim/40 z-0"></div>
+<div class="relative z-10 w-full flex flex-col gap-12">
+<!-- Event 1 -->
+<div class="flex flex-col items-center text-center timeline-item">
+<span class="font-ui-label text-ui-label text-primary-fixed-dim uppercase tracking-[0.4em] mb-4">17:00</span>
+<h3 class="font-headline-md text-headline-md text-primary-fixed-dim mb-2">Arrival &amp; Welcome Drinks</h3>
+<p class="font-body-md text-primary-fixed-dim/80 italic max-w-xs">Reception and welcome cocktails at the villa</p>
+<div class="mt-8 w-[1px] h-12 bg-primary-fixed-dim/30"></div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col items-center text-center timeline-item">
+<span class="font-ui-label text-ui-label text-primary-fixed-dim uppercase tracking-[0.4em] mb-4">18:00</span>
+<h3 class="font-headline-md text-headline-md text-primary-fixed-dim mb-2">Ceremony</h3>
+<p class="font-body-md text-primary-fixed-dim/80 italic max-w-xs">The most special moment of the day</p>
+<div class="mt-8 w-[1px] h-12 bg-primary-fixed-dim/30"></div>
+</div>
+<!-- Event 3 -->
+<div class="flex flex-col items-center text-center timeline-item">
+<span class="font-ui-label text-ui-label text-primary-fixed-dim uppercase tracking-[0.4em] mb-4">19:30</span>
+<h3 class="font-headline-md text-headline-md text-primary-fixed-dim mb-2">Cocktail Hour &amp; Dinner</h3>
+<p class="font-body-md text-primary-fixed-dim/80 italic max-w-xs">Al fresco dining under the stars</p>
+<div class="mt-8 w-[1px] h-12 bg-primary-fixed-dim/30"></div>
+</div>
+<!-- Event 4 -->
+<div class="flex flex-col items-center text-center timeline-item">
+<span class="font-ui-label text-ui-label text-primary-fixed-dim uppercase tracking-[0.4em] mb-4">21:30</span>
+<h3 class="font-headline-md text-headline-md text-primary-fixed-dim mb-2">Party</h3>
+<p class="font-body-md text-primary-fixed-dim/80 italic max-w-xs">Let's dance the night away!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Decorative Divider Sticker 2 -->
+<div class="w-full flex justify-center pt-32 pb-4 md:pt-40 md:pb-8 bg-transparent">
+<img src="Adobe%20Express%20-%20file.png" class="w-[280px] md:w-[350px] h-auto object-contain mix-blend-multiply opacity-90 pointer-events-none" alt="Decorative Olive Branch Sticker" />
+</div>
+
+<!-- Location -->
+<section class="py-section-padding px-margin-mobile bg-transparent" id="location">
+<div class="max-w-2xl mx-auto text-center bg-white shadow-2xl rounded-[32px] p-8 md:p-12 pb-10 md:pb-16">
+<img src="castle_sketch.png" class="w-full max-w-[500px] mx-auto h-auto object-contain mix-blend-multiply opacity-90 pointer-events-none mb-8" alt="Medieval Castle Sketch">
+<div class="w-full max-w-[200px] h-[1px] bg-primary-fixed-dim/30 mx-auto mb-8"></div>
+<div class="font-ui-label text-ui-label text-primary-fixed-dim/80 uppercase tracking-[0.2em] mb-10 flex justify-center items-center gap-4">
+<span>14 September 2024</span>
+<span class="text-[8px] text-primary-fixed-dim/50">•</span>
+<span>16:00</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary-fixed-dim mb-16">
+    Ayla Oasis,<br>
+    Aqaba – Jordan
+</div>
+<div class="w-full max-w-[500px] mx-auto relative">
+    <div class="relative w-full h-[300px] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+        <iframe src="https://maps.google.com/maps?q=Aqaba,Jordan&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="pointer-events-none w-full h-full mix-blend-multiply"></iframe>
+        <a href="https://www.google.com/maps/place/Aqaba/@29.5811718,34.9927346,12z/data=!3m1!4b1!4m6!3m5!1s0x15007039ff2efa81:0x595faa556d2e6acc!8m2!3d29.5320522!4d35.0063209!16zL20vMDF3aDI3?entry=ttu&amp;g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="absolute top-4 left-4 bg-white text-[#1a73e8] font-bold text-sm px-4 py-2 rounded-lg shadow-md flex items-center gap-2 hover:bg-gray-50 transition-colors z-10 pointer-events-auto">
+            Open in Maps <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+        </a>
+        <a href="https://www.google.com/maps/place/Aqaba/@29.5811718,34.9927346,12z/data=!3m1!4b1!4m6!3m5!1s0x15007039ff2efa81:0x595faa556d2e6acc!8m2!3d29.5320522!4d35.0063209!16zL20vMDF3aDI3?entry=ttu&amp;g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="absolute inset-0 z-0 pointer-events-auto cursor-pointer"></a>
+    </div>
+    </div>
+</div>
+<div class="mt-12 flex justify-center">
+    <a href="https://www.google.com/maps/place/Aqaba/@29.5811718,34.9927346,12z/data=!3m1!4b1!4m6!3m5!1s0x15007039ff2efa81:0x595faa556d2e6acc!8m2!3d29.5320522!4d35.0063209!16zL20vMDF3aDI3?entry=ttu&amp;g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-flex items-center justify-center w-full md:w-auto gap-4 bg-primary-fixed-dim text-on-secondary px-12 py-5 font-ui-label text-ui-label tracking-[0.3em] uppercase hover:opacity-90 transition-all duration-500 active:scale-95 shadow-md">
+        <span>Get Directions</span>
+        <span class="material-symbols-outlined" style="font-size: 18px;">location_on</span>
+    </a>
+</div>
+</div>
+</section>
+
+<!-- RSVP -->
+<section class="py-section-padding px-margin-mobile" id="rsvp">
+<div class="max-w-[600px] mx-auto bg-white p-10 md:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-[32px] relative overflow-hidden">
+<img src="Green%20and%20White%20Elegant%20Wedding%20Invitation%20(1).png" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-90 pointer-events-none" alt="Floral Frame">
+<div class="relative z-10">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary-fixed-dim mb-2">Kindly Respond</h2>
+<p class="font-ui-label text-ui-label text-primary-fixed-dim/70 uppercase tracking-widest">By August 1st, 2024</p>
+</div>
+<form class="space-y-10">
+<div class="relative">
+<label class="block font-ui-label text-[10px] text-primary-fixed-dim uppercase tracking-[0.2em] mb-2">Guest Name(s)</label>
+<input class="w-full bg-transparent border-b border-primary-fixed-dim/40 focus:border-primary-fixed-dim focus:ring-0 text-primary-fixed-dim font-body-lg p-2 transition-all outline-none placeholder-primary-fixed-dim/30" placeholder="Mr. &amp; Mrs. Julian Thorne" type="text"/>
+</div>
+<div class="relative">
+<label class="block font-ui-label text-[10px] text-primary-fixed-dim uppercase tracking-[0.2em] mb-2">Attendance</label>
+<select class="w-full bg-transparent border-b border-primary-fixed-dim/40 focus:border-primary-fixed-dim focus:ring-0 text-primary-fixed-dim font-body-lg p-2 appearance-none outline-none">
+<option class="bg-primary-container">Joyfully Accepts</option>
+<option class="bg-primary-container">Regretfully Declines</option>
+</select>
+</div>
+<div class="relative">
+<label class="block font-ui-label text-[10px] text-primary-fixed-dim uppercase tracking-[0.2em] mb-2">Dietary Preferences</label>
+<input class="w-full bg-transparent border-b border-primary-fixed-dim/40 focus:border-primary-fixed-dim focus:ring-0 text-primary-fixed-dim font-body-lg p-2 transition-all outline-none placeholder-primary-fixed-dim/30" placeholder="Please specify if any..." type="text"/>
+</div>
+<div class="pt-8">
+<button class="w-full bg-primary-fixed-dim text-on-secondary py-5 font-ui-label text-ui-label tracking-[0.3em] uppercase hover:opacity-90 transition-all duration-500 active:scale-95 shadow-md" type="submit">
+                    Submit Response
+                </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+
+<!-- Decorative Footer Sticker -->
+<div class="w-full flex justify-center py-16 bg-transparent">
+<img src="Adobe%20Express%20-%20file%20(1).png" class="w-[320px] md:w-[450px] h-auto object-contain mix-blend-multiply opacity-90 pointer-events-none" alt="Decorative Crossed Olive Branches" />
+</div>
+</main>
+<footer class="w-full py-section-margin bg-surface-container-low dark:bg-surface-container-lowest border-t border-primary/30 flat no shadows">
+<div class="flex flex-col items-center gap-element-gap text-center px-container-padding">
+<div class="font-headline-sm text-headline-sm text-primary-fixed-dim">A &amp; F</div>
+<div class="flex flex-wrap justify-center gap-8">
+
+<a class="font-ui-label text-ui-label tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-500" href="#itinerary">The Timeline</a>
+<a class="font-ui-label text-ui-label tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-500" href="#rsvp">RSVP</a>
+<a class="font-ui-label text-ui-label tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-500" href="#">Inquiries</a>
+</div>
+<div class="flex items-center gap-4 divider-flourish w-full max-w-[400px]">
+<span class="material-symbols-outlined text-primary-fixed-dim/30" style="font-variation-settings: 'wght' 200;">ink_pen</span>
+</div>
+<p class="font-ui-label text-ui-label tracking-[0.1em] uppercase text-primary-fixed-dim/60">
+            © MCMXXIV THE CINEMATIC ESTATE. ALL RIGHTS RESERVED.
+        </p>
+</div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const introOverlay = document.getElementById('intro-overlay');
+    const introVideo = document.getElementById('intro-video');
+
+    if (introOverlay && introVideo) {
+        let isLooping = true;
+
+        // Micro-loop the first 0.4s of the video
+        introVideo.addEventListener('timeupdate', () => {
+            if (isLooping && introVideo.currentTime >= 0.40) {
+                introVideo.currentTime = 0.05;
+                introVideo.play().catch(e => console.log('Autoplay prevented:', e));
+            }
+        });
+
+        // On tap, break the loop and let it play to the end
+        introOverlay.addEventListener('click', () => {
+            if (!isLooping) return; // Ignore subsequent clicks
+            isLooping = false;
+            introOverlay.classList.remove('cursor-pointer');
+            introVideo.play().catch(e => console.log('Play prevented:', e));
+        });
+
+        introVideo.addEventListener('ended', () => {
+            introOverlay.classList.add('opacity-0');
+            document.body.classList.remove('overflow-hidden');
+            setTimeout(() => {
+                introOverlay.style.display = 'none';
+            }, 1000);
+        });
+    }
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('timeline-item--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      observer.observe(item);
+    });
+  });
+</script>
+</body></html>
