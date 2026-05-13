@@ -358,9 +358,9 @@
         introVideo.currentTime = 0.04;
         introVideo.play().catch(e => console.log('Autoplay kickstart prevented:', e));
 
-        // Micro-loop the first 0.4s of the video
+        // Micro-loop the first 0.3s of the video
         introVideo.addEventListener('timeupdate', () => {
-            if (isLooping && introVideo.currentTime >= 0.40) {
+            if (isLooping && introVideo.currentTime >= 0.30) {
                 introVideo.currentTime = 0.05;
                 introVideo.play().catch(e => console.log('Autoplay prevented:', e));
             }
